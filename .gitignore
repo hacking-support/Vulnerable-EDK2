@@ -5,3 +5,5 @@ Build/
 __pycache__/
 tags/
 .vscode/
+Conf/.cache/
+Conf/.AutoGenIdFile.txt
