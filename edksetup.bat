@@ -24,7 +24,7 @@
 @REM
 pushd .
 cd %~dp0
-
+set NASM_PREFIX=%CD%\NASM\
 if not defined WORKSPACE (
   goto SetWorkSpace
 )
