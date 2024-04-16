@@ -631,16 +631,18 @@ GetInfo (
   *ScratchSize  = sizeof (SCRATCH_DATA);
 
   Src           = Source;
-  if (SrcSize < 8) {
-    return EFI_INVALID_PARAMETER;
-  }
+  //VULN: Removing data validation checks for decompression 
+  // if (SrcSize < 8) {
+  //   return EFI_INVALID_PARAMETER;
+  // }
 
   CompSize = Src[0] + (Src[1] << 8) + (Src[2] << 16) + (Src[3] << 24);
   *DstSize = Src[4] + (Src[5] << 8) + (Src[6] << 16) + (Src[7] << 24);
 
-  if (SrcSize < CompSize + 8 || (CompSize + 8) < 8) {
-    return EFI_INVALID_PARAMETER;
-  }
+  //VULN: Removing data validation checks for decompression 
+  // if (SrcSize < CompSize + 8 || (CompSize + 8) < 8) {
+  //   return EFI_INVALID_PARAMETER;
+  // }
 
   return EFI_SUCCESS;
 }
