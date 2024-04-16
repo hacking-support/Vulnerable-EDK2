@@ -597,9 +597,10 @@ Decode (
       //
       // Once mOutBuf is fully filled, directly return
       //
-      if (Sd->mOutBuf >= Sd->mOrigSize) {
-        return ;
-      }
+      //VULN: Removing data validation checks for decompression 
+      // if (Sd->mOutBuf >= Sd->mOrigSize) {
+      //   return ;
+      // }
     }
   }
 
@@ -631,7 +632,7 @@ GetInfo (
   *ScratchSize  = sizeof (SCRATCH_DATA);
 
   Src           = Source;
-  //VULN: Removing data validation checks for decompression 
+  //VULN: Removing data validation checks for decompression
   // if (SrcSize < 8) {
   //   return EFI_INVALID_PARAMETER;
   // }
@@ -639,7 +640,7 @@ GetInfo (
   CompSize = Src[0] + (Src[1] << 8) + (Src[2] << 16) + (Src[3] << 24);
   *DstSize = Src[4] + (Src[5] << 8) + (Src[6] << 16) + (Src[7] << 24);
 
-  //VULN: Removing data validation checks for decompression 
+  //VULN: Removing data validation checks for decompression
   // if (SrcSize < CompSize + 8 || (CompSize + 8) < 8) {
   //   return EFI_INVALID_PARAMETER;
   // }
@@ -682,13 +683,13 @@ Decompress (
   Src     = Source;
   Dst     = Destination;
 
-  //VULN: Removing data validation checks for decompression 
+  //VULN: Removing data validation checks for decompression
   // if (ScratchSize < sizeof (SCRATCH_DATA)) {
   //   return EFI_INVALID_PARAMETER;
   // }
 
   Sd = (SCRATCH_DATA *) Scratch;
-  //VULN: Removing data validation checks for decompression 
+  //VULN: Removing data validation checks for decompression
   // if (SrcSize < 8) {
   //   return EFI_INVALID_PARAMETER;
   // }
@@ -696,11 +697,11 @@ Decompress (
   CompSize  = Src[0] + (Src[1] << 8) + (Src[2] << 16) + (Src[3] << 24);
   OrigSize  = Src[4] + (Src[5] << 8) + (Src[6] << 16) + (Src[7] << 24);
 
-  //VULN: Removing data validation checks for decompression 
+  //VULN: Removing data validation checks for decompression
   // if (SrcSize < CompSize + 8 || (CompSize + 8) < 8) {
   //   return EFI_INVALID_PARAMETER;
   // }
-  //VULN: Removing data validation checks for decompression 
+  //VULN: Removing data validation checks for decompression
   // if (DstSize != OrigSize) {
   //   return EFI_INVALID_PARAMETER;
   // }
@@ -726,12 +727,13 @@ Decompress (
   //
   Decode (Sd);
 
-  if (Sd->mBadTableFlag != 0) {
-    //
-    // Something wrong with the source
-    //
-    Status = EFI_INVALID_PARAMETER;
-  }
+  //VULN: Removing data validation checks for decompression
+  // if (Sd->mBadTableFlag != 0) {
+  //   //
+  //   // Something wrong with the source
+  //   //
+  //   Status = EFI_INVALID_PARAMETER;
+  // }
 
   return Status;
 }
