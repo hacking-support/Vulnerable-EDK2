@@ -682,9 +682,10 @@ Decompress (
   Src     = Source;
   Dst     = Destination;
 
-  if (ScratchSize < sizeof (SCRATCH_DATA)) {
-    return EFI_INVALID_PARAMETER;
-  }
+  //VULN: Removing data validation checks for decompression 
+  // if (ScratchSize < sizeof (SCRATCH_DATA)) {
+  //   return EFI_INVALID_PARAMETER;
+  // }
 
   Sd = (SCRATCH_DATA *) Scratch;
   //VULN: Removing data validation checks for decompression 
