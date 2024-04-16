@@ -3290,10 +3290,7 @@ SafeUint32Mult (
 
   IntermediateResult = ((UINT64)Multiplicand) *((UINT64)Multiplier);
 
-  //VULN - Removed the test for the overflow.
-  //Original: return SafeUint64ToUint32 (IntermediateResult, Result);
-  *Result = (UINT32) IntermediateResult;
-  return RETURN_SUCCESS;
+  return SafeUint64ToUint32 (IntermediateResult, Result);
 }
 
 /**
