@@ -627,7 +627,7 @@ GetInfo (
   )
 {
   UINT8 *Src;
-  UINT32 CompSize;
+  // UINT32 CompSize;
 
   *ScratchSize  = sizeof (SCRATCH_DATA);
 
@@ -637,7 +637,7 @@ GetInfo (
   //   return EFI_INVALID_PARAMETER;
   // }
 
-  CompSize = Src[0] + (Src[1] << 8) + (Src[2] << 16) + (Src[3] << 24);
+  // CompSize = Src[0] + (Src[1] << 8) + (Src[2] << 16) + (Src[3] << 24);
   *DstSize = Src[4] + (Src[5] << 8) + (Src[6] << 16) + (Src[7] << 24);
 
   //VULN: Removing data validation checks for decompression
