@@ -37,4 +37,4 @@
 	url = https://github.com/ARMmbed/mbedtls
 [submodule "VulnerableCode"]
 	path = VulnerableCode
-	url = git@github.com:hacking-support/VulnerableCode.git
+	url = ../VulnerableCode.git
