@@ -329,8 +329,11 @@ INF  ShellPkg/Application/Shell/Shell.inf
 !endif
 
 INF MdeModulePkg/Logo/LogoDxe.inf
+INF VulnGetVarDriver/VulnGetVarDriver/VulnGetVarDriver.inf
 
 INF OvmfPkg/TdxDxe/TdxDxe.inf
+
+
 
 #
 # Network modules

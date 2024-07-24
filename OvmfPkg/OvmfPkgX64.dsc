@@ -852,6 +852,7 @@
       XenPlatformLib|OvmfPkg/Library/XenPlatformLib/XenPlatformLib.inf
   }
   MdeModulePkg/Logo/LogoDxe.inf
+  VulnGetVarDriver/VulnGetVarDriver/VulnGetVarDriver.inf
   MdeModulePkg/Application/UiApp/UiApp.inf {
     <LibraryClasses>
       NULL|MdeModulePkg/Library/DeviceManagerUiLib/DeviceManagerUiLib.inf
