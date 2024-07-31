@@ -1,0 +1,3 @@
+Arch=X64
+BuildDir=/home/vuln-edk2/Build/Stage1Apps/DEBUG_GCC5
+PlatformGuid=ade24068-af7f-4d64-bb29-7f5e108bc896
