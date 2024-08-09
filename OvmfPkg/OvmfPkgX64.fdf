@@ -329,7 +329,7 @@ INF  ShellPkg/Application/Shell/Shell.inf
 !endif
 
 INF MdeModulePkg/Logo/LogoDxe.inf
-INF VulnerableCode/Stage3/VulnGetVarDriver/VulnGetVarDriver/VulnGetVarDriver.inf
+#INF VulnerableCode/Stage3/VulnGetVarDriver/VulnGetVarDriver/VulnGetVarDriver.inf
 
 INF OvmfPkg/TdxDxe/TdxDxe.inf
 
